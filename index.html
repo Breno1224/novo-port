@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website port</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const menuHamburguer = document.querySelector(".menu-hamburguer");
+    const navResponsiva = document.querySelector(".nav-responsiva");
+
+    menuHamburguer.addEventListener("click", function () {
+        // Alterna a classe "ativo" no menu hambúrguer e na navegação responsiva
+        menuHamburguer.classList.toggle("ativo");
+        navResponsiva.classList.toggle("ativo");
+    });
+
+    // Fecha o menu ao clicar em um link
+    navResponsiva.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function () {
+            menuHamburguer.classList.remove("ativo");
+            navResponsiva.classList.remove("ativo");
+        });
+    });
+});
+        document.addEventListener("DOMContentLoaded", function () {
+    const botoesLeiaMais = document.querySelectorAll(".leia-mais");
+
+    botoesLeiaMais.forEach(botao => {
+        botao.addEventListener("click", function (e) {
+            e.preventDefault(); // Evita o comportamento padrão do link
+            const servicoBox = botao.closest(".servico-box");
+            const textoResumido = servicoBox.querySelector(".texto-resumido");
+            const textoCompleto = servicoBox.querySelector(".texto-completo");
+
+            if (textoCompleto.style.display === "none") {
+                textoResumido.style.display = "none";
+                textoCompleto.style.display = "block";
+                botao.textContent = "Mostrar menos";
+            } else {
+                textoResumido.style.display = "-webkit-box";
+                textoCompleto.style.display = "none";
+                botao.textContent = "Leia mais";
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleciona todos os botões "Leia mais"
+    const botoesLeiaMais = document.querySelectorAll(".leia-mais");
+
+    botoesLeiaMais.forEach(botao => {
+        botao.addEventListener("click", function (e) {
+            e.preventDefault(); // Evita o comportamento padrão do link
+
+            // Encontra o contêiner mais próximo (sobre-content)
+            const sobreContent = botao.closest(".sobre-content");
+
+            // Seleciona o texto resumido e o texto completo
+            const textoResumido = sobreContent.querySelector(".texto-resumido");
+            const textoCompleto = sobreContent.querySelector(".texto-completo");
+
+            // Alterna entre mostrar e ocultar o texto completo
+            if (textoCompleto.style.display === "none" || textoCompleto.style.display === "") {
+                textoResumido.style.display = "none"; // Oculta o texto resumido
+                textoCompleto.style.display = "block"; // Mostra o texto completo
+                botao.textContent = "Mostrar menos"; // Altera o texto do botão
+            } else {
+                textoResumido.style.display = "-webkit-box"; // Mostra o texto resumido
+                textoCompleto.style.display = "none"; // Oculta o texto completo
+                botao.textContent = "Leia mais"; // Altera o texto do botão
+            }
+        });
+    });
+});
+    </script>
+
+<header>
+    <a href="#" class="logo">portifolio</a>
+    <div class="nav">
+        <a href="#home">home</a>
+        <a href="#serviço">serviço</a>
+        <a href="#portifolio">portifolio</a>
+        <a href="#contato">contato</a>
+        <a href="#sobre">sobre</a>
+    </div>
+    <div class="menu-hamburguer">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <div class="nav-responsiva">
+        <a href="#home">home</a>
+        <a href="#serviço">serviço</a>
+        <a href="#portifolio">portifolio</a>
+        <a href="#contato">contato</a>
+        <a href="#sobre">sobre</a>
+    </div>
+</header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>bom dia, boa tarde e boa noite</h3>
+            <h2>eu sou o Breno</h2>
+            <h3>full-stack <span>dev</span></h3>
+            <p>Aqui, você encontrará um desenvolvedor dedicado a transformar suas ideias em código. Saiba mais sobre meu trabalho abaixo ou faça o download do meu currículo.</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/breno-arantes-5220ab344/"><i class='bx bxl-linkedin'></i></a>
+                <!-- <a href="#"><i class='bx bxl-instagram'></i></a> -->
+            </div>
+            <a href="pdf/BRENO ARANTES.pdf" download="Curriculo_Breno.pdf"class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="img/eu.jpg" alt="foto de perfil">
+        </div>
+    </section>
+ <!-- /home -->
+<!--serviço -->
+<section class="serviço" id="serviço">
+    <h2>meu <span>serviço</span></h2>
+    <div class="servico-container">
+        <div class="servico-box">
+            <i class='bx bx-code-alt'></i>
+            <h3>Web Development</h3>
+            <p class="texto-resumido">Posso desenvolver páginas web personalizadas para você ou sua empresa, independentemente do estilo ou funcionalidade desejados. Meu foco é criar soluções que cativem seu público-alvo, garantindo um resultado envolvente e eficiente. Além disso, mantenho você sempre atualizado sobre o progresso do projeto.</p>
+            <p class="texto-completo" style="display: none;">Posso desenvolver páginas web personalizadas para você ou sua empresa, independentemente do estilo ou funcionalidade desejados. Meu foco é criar soluções que cativem seu público-alvo, garantindo um resultado envolvente e eficiente. Além disso, mantenho você sempre atualizado sobre o progresso do projeto.</p>
+            <a href="#" class="btn leia-mais">Leia mais</a>
+        </div>
+
+        <div class="servico-box">
+            <i class='bx bx-code-curly'></i>
+            <h3>Back-End</h3>
+            <p class="texto-resumido">Como em qualquer projeto, tudo começa pela base. O desenvolvimento tem início no back-end, onde toda a estrutura essencial será implementada com base nas discussões realizadas com o cliente. Nesse estágio, foco na construção de funcionalidades, correção de possíveis bugs e na inclusão de melhorias para garantir um sistema sólido e eficiente.</p>
+            <p class="texto-completo" style="display: none;">Como em qualquer projeto, tudo começa pela base. O desenvolvimento tem início no back-end, onde toda a estrutura essencial será implementada com base nas discussões realizadas com o cliente. Nesse estágio, foco na construção de funcionalidades, correção de possíveis bugs e na inclusão de melhorias para garantir um sistema sólido e eficiente..</p>
+            <a href="#" class="btn leia-mais">Leia mais</a>
+        </div>
+    </div>
+</section>
+
+<!-- /serviço -->
+<!-- portfolio -->
+
+<section class="portifolio" id="portifolio">
+<h2>ultimos <span>projetos</span></h2>
+
+<div class="portifolio-container">
+<div class="portifolio-box">
+    <img src="img/asset-1.jpg" alt="">
+    <div class="portifolio-layer">
+        <h4>meu site</h4>
+        <p>site feito para meu portifolio proficional.</p>
+        <a href=""><i class='bx bx-link-external' ></i></a>
+    </div>
+</div>
+
+<div class="portifolio-box">
+    <img src="img/cachorro.png" alt="">
+    <div class="portifolio-layer">
+        <h4>abrigo sol nascente</h4>
+        <p>site feito para tcc da etec pedro ferreira alves.</p>
+        <a href="https://abrigosolnascente.com.br"><i class='bx bx-link-external' ></i></a>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+
+</section>
+ <!-- /portfolio -->
+ <!-- contato -->
+<section class="contato" id="contato">
+<h2>contate - <span>me</span></h2>
+
+
+
+<form action="https://formsubmit.co/brenoarantes9090@gmail.com" method="POST">
+    <!-- Campos do formulário -->
+    <div class="input-box">
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="number" name="celular" placeholder="Celular" required>
+        <input type="text" name="assunto" placeholder="Assunto" required>
+    </div>
+    <textarea name="mensagem" cols="30" rows="8" placeholder="Mensagem" required></textarea>
+
+    <!-- Botão de envio -->
+    <button type="submit" class="btn">Enviar mensagem</button>
+
+    <!-- Configurações adicionais do FormSubmit -->
+    <input type="hidden" name="_captcha" value="false"> <!-- Desativa o captcha -->
+    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> <!-- Página de redirecionamento após o envio -->
+    <input type="hidden" name="_template" value="table"> <!-- Formato do e-mail (opcional) -->
+</form>
+
+
+</section>
+  <!-- /contato -->
+
+  <!-- sobre -->
+  <section class="sobre" id="sobre">
+    <div class="sobre-img">
+        <img src="img/eu.jpg" alt="Sobre mim">
+    </div>
+    <div class="sobre-content">
+        <h1>Full-Stack <span>Developer</span></h1>
+        <p class="texto-resumido">Sou um desenvolvedor formado em Desenvolvimento de Sistemas pela ETEC Pedro Ferreira Alves.</p>
+        <p class="texto-completo" style="display: none;">Sou um desenvolvedor formado em Desenvolvimento de Sistemas pela ETEC Pedro Ferreira Alves. Durante minha formação, adquiri conhecimento em diversas linguagens de programação e, agora, estou aplicando esses aprendizados na prática, buscando me aprimorar continuamente para atuar no mercado de trabalho.</p>
+        <a href="#" class="btn leia-mais">Leia mais</a>
+    </div>
+</section>
+   <!-- /sobre  -->
+
+
+   <footer>
+    <p>copyright &copy; 2025 por Breno Arantes, todos os direitos reservados</p>
+   </footer>
+
+</body>
+</html>
