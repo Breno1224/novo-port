@@ -540,3 +540,146 @@ footer p {
     color: var(--main-color); /* Cor do texto roxa ao passar o mouse */
     box-shadow: 0 0 0.3rem var(--main-color); /* Sombra roxa ao passar o mouse */
 }
+.habilidades-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.habilidades span{
+    color: var(--main-color);
+}
+.habilidade {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 150px;
+}
+
+.barra-progresso {
+    position: relative;
+    z-index: 2; 
+    background-color: var(--bg-color-02); /* Cor de fundo escura */
+    border-radius: 10px; /* Bordas arredondadas */
+    height: 10px; /* Altura da barra */
+    overflow: hidden; /* Garante que o progresso não ultrapasse a barra */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Borda branca semi-transparente */
+}
+
+.progresso {
+    
+    background-color: var(--main-color); /* Cor roxa para o progresso */
+    height: 100%; /* Altura igual à barra */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+.bxl-html5, .bxl-css3, .bxl-react, .bxl-javascript {
+    position: relative;
+    z-index: 2; 
+   transition: ease 0.3s;
+    font-size: 4rem; /* Ajuste o valor conforme necessário */
+}
+.bxl-html5:hover{
+    margin-bottom: 30px;
+    transition: ease 0.3s;
+    transform: scale(2);
+    color: var(--main-color);
+}
+.bxl-css3:hover{
+    margin-bottom: 30px;
+    transition: ease 0.3s;
+    transform: scale(2);
+    color: var(--main-color);
+}
+.bxl-react:hover{
+    margin-bottom: 30px;
+    transition: ease 0.3s;
+    transform: scale(2);
+    color: var(--main-color);
+}
+.bxl-javascript:hover{
+    margin-bottom: 30px;
+    transition: ease 0.3s;
+    transform: scale(2);
+    color: var(--main-color);
+}
+.habilidades {
+    text-align: center; /* Centraliza o texto */
+    padding: 6rem 6rem 2rem; /* Mesmo padding das outras seções */
+}
+
+.habilidades h2 {
+    font-size: 2.2rem; /* Tamanho do título */
+    margin-bottom: 1rem; /* Espaçamento abaixo do título */
+}
+
+.habilidades h2 span {
+    color: var(--main-color); /* Cor roxa para o span */
+}
+
+.habilidades h2, .habilades{
+    margin-top: -70px;
+    margin-bottom: 9rem;
+}
+.retangulo-fundo {
+    border: 2px solid var(--main-color); /* Borda roxa */
+    background-color: var(--bg-color-02); /* Cor de fundo escura */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    display: inline-block; /* Faz o retângulo se ajustar ao conteúdo */
+    margin-top: 1rem; /* Espaçamento acima do retângulo */
+    width: 100%; /* Largura total */
+    max-width: 800px; /* Largura máxima (ajuste conforme necessário) */
+    box-shadow: 0 0 15px rgba(146, 0, 204, 0.5);
+}
+.fundo-estrelado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1; /* Coloca o fundo estrelado atrás do conteúdo */
+}
+
+.estrela {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: piscar 2s infinite ease-in-out;
+    z-index: 1; /* Garante que as estrelas fiquem atrás do conteúdo */
+}
+@keyframes piscar {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+.estrela-cadente {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, white);
+    animation: cair 3s linear infinite;
+    z-index: 1; /* Garante que as estrelas cadentes fiquem atrás do conteúdo */
+}
+
+
+@keyframes cair {
+    0% {
+        transform: translateY(-20px) rotate(45deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.habilidades-container {
+    position: relative;
+    z-index: 2; /* Coloca o conteúdo na frente do fundo estrelado */
+}

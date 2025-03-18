@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
+    <button id="toggle-theme">Modo Claro</button>
     <script>
+        
        document.addEventListener("DOMContentLoaded", function () {
     const menuHamburguer = document.querySelector(".menu-hamburguer");
     const navResponsiva = document.querySelector(".nav-responsiva");
@@ -76,6 +78,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 botao.textContent = "Leia mais"; // Altera o texto do botão
             }
         });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const fundoEstrelado = document.querySelector(".fundo-estrelado");
+
+    // Adiciona estrelas fixas
+    for (let i = 0; i < 100; i++) {
+        const estrela = document.createElement("div");
+        estrela.classList.add("estrela");
+        estrela.style.top = `${Math.random() * 100}%`;
+        estrela.style.left = `${Math.random() * 100}%`;
+        estrela.style.animationDelay = `${Math.random() * 2}s`;
+        fundoEstrelado.appendChild(estrela);
+    }
+
+    // Adiciona estrelas cadentes
+    setInterval(() => {
+        const estrelaCadente = document.createElement("div");
+        estrelaCadente.classList.add("estrela-cadente");
+        estrelaCadente.style.top = `${Math.random() * 100}%`;
+        estrelaCadente.style.left = `${Math.random() * 100}%`;
+        fundoEstrelado.appendChild(estrelaCadente);
+
+        // Remove a estrela cadente após a animação
+        setTimeout(() => {
+            estrelaCadente.remove();
+        }, 3000);
+    }, 1000); // Adiciona uma estrela cadente a cada 1 segundo
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const barras = document.querySelectorAll(".progresso");
+
+    barras.forEach(barra => {
+        const progresso = barra.getAttribute("data-progresso");
+        barra.style.width = progresso + "%"; // Define a largura da barra
     });
 });
     </script>
@@ -217,6 +254,44 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
 </section>
    <!-- /sobre  -->
+    <!-- hab -->
+    <section class="habilidades" id="habilidades">
+        <h2>Minhas <span>Habilidades</span></h2>
+        <div class="retangulo-fundo">
+         
+            <div class="habilidades-container">
+                <div class="fundo-estrelado"></div> <!-- Fundo estrelado -->
+                <div class="habilidade">
+                    <i class='bx bxl-html5'></i>
+                    <h3>HTML5</h3>
+                    <div class="barra-progresso">
+                        <div class="progresso" data-progresso="88"></div>
+                    </div>
+                </div>
+                <div class="habilidade">
+                    <i class='bx bxl-css3'></i>
+                    <h3>CSS3</h3>
+                    <div class="barra-progresso">
+                        <div class="progresso" data-progresso="75"></div>
+                    </div>
+                </div>
+                <div class="habilidade">
+                    <i class='bx bxl-react'></i>
+                    <h3>React</h3>
+                    <div class="barra-progresso">
+                        <div class="progresso" data-progresso="50"></div>
+                    </div>
+                </div>
+                <div class="habilidade">
+                    <i class='bx bxl-javascript'></i>
+                    <h3>JavaScript</h3>
+                    <div class="barra-progresso">
+                        <div class="progresso" data-progresso="65"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
    <footer>
