@@ -663,6 +663,15 @@ footer p {
     animation: cair 3s linear infinite;
     z-index: 1; /* Garante que as estrelas cadentes fiquem atrás do conteúdo */
 }
+.bxl-nodejs, .bxl-git, .bxl-mongodb, .bxl-java {
+    font-size: 4rem; /* Tamanho dos ícones */
+    transition: ease 0.3s; /* Transição suave ao passar o mouse */
+}
+.bxl-nodejs:hover, .bxl-git:hover, .bxl-mongodb:hover, .bxl-java:hover {
+    margin-bottom: 30px; /* Efeito ao passar o mouse */
+    transform: scale(2); /* Aumenta o tamanho do ícone */
+    color: var(--main-color); /* Muda a cor para roxo */
+}
 
 
 @keyframes cair {
