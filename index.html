@@ -7,9 +7,10 @@
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <button id="toggle-theme">Modo Claro</button>
+
     <script>
       
        document.addEventListener("DOMContentLoaded", function () {
@@ -115,6 +116,13 @@ document.addEventListener("DOMContentLoaded", function () {
         barra.style.width = progresso + "%"; // Define a largura da barra
     });
 });
+document.addEventListener('keydown', function(event) {
+    if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+        event.preventDefault();
+    }
+});
+document.addEventListener('contextmenu', event => event.preventDefault());
+
     </script>
 
 <header>
@@ -141,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="#habilidades">habilidades</a>
     </div>
 </header>
-    <section class="home" id="home">
-        <div class="home-content">
+<section class="home" id="home" data-aos="fade-up">
+    <div class="home-content" data-aos="fade-right" data-aos-delay="200">
             <h3>bom dia, boa tarde e boa noite</h3>
             <h2>eu sou o Breno</h2>
             <h3>full-stack <span>dev</span></h3>
@@ -159,8 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
     </section>
  <!-- /home -->
 <!--serviço -->
-<section class="serviço" id="serviço">
-    <h2>meu <span>serviço</span></h2>
+<section class="serviço" id="serviço" data-aos="fade-up" data-aos-duration="1000">
+    <h2 data-aos="fade-down" data-aos-delay="200">meu <span>serviço</span></h2>
     <div class="servico-container">
         <div class="servico-box">
             <i class='bx bx-code-alt'></i>
@@ -183,8 +191,9 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- /serviço -->
 <!-- portfolio -->
 
-<section class="portifolio" id="portifolio">
-<h2>ultimos <span>projetos</span></h2>
+<section class="portifolio" id="portifolio"
+data-aos="fade-up" data-aos-duration="1000">
+<h2 data-aos="fade-down" data-aos-delay="200">data-aos>ultimos <span>projetos</span></h2>
 
 <div class="portifolio-container">
 <div class="portifolio-box">
@@ -215,8 +224,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
  <!-- /portfolio -->
  <!-- contato -->
-<section class="contato" id="contato">
-<h2>contate - <span>me</span></h2>
+<section class="contato" id="contato"data-aos="flip-left" data-aos-duration="1000">
+<h2 data-aos="fade-down" data-aos-delay="200">contate - <span>me</span></h2>
 
 
 
@@ -244,11 +253,11 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- /contato -->
 
   <!-- sobre -->
-  <section class="sobre" id="sobre">
+  <section class="sobre" id="sobre" id="contato"data-aos="fade-down" data-aos-duration="1000">
     <div class="sobre-img">
         <img src="img/eu.jpg" alt="Sobre mim">
     </div>
-    <div class="sobre-content">
+    <div class="sobre-content" data-aos="fade-up" data-aos-duration="1000">
         <h1>Full-Stack <span>Developer</span></h1>
         <p class="texto-resumido">Sou um desenvolvedor formado em Desenvolvimento de Sistemas pela ETEC Pedro Ferreira Alves.</p>
         <p class="texto-completo" style="display: none;">Sou um desenvolvedor formado em Desenvolvimento de Sistemas pela ETEC Pedro Ferreira Alves. Durante minha formação, adquiri conhecimento em diversas linguagens de programação e, agora, estou aplicando esses aprendizados na prática, buscando me aprimorar continuamente para atuar no mercado de trabalho.</p>
@@ -257,8 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
    <!-- /sobre  -->
     <!-- hab -->
-    <section class="habilidades" id="habilidades">
-        <h2>Minhas <span>Habilidades</span></h2>
+    <section class="habilidades" id="habilidades" id="contato"data-aos="fade-down" data-aos-duration="1000">
+        <h2 id="contato"data-aos="flip-left" data-aos-duration="1000">Minhas <span>Habilidades</span></h2>
         <div class="retangulo-fundo">
          
             <div class="habilidades-container">
@@ -328,6 +337,9 @@ document.addEventListener("DOMContentLoaded", function () {
    <footer>
     <p>copyright &copy; 2025 por Breno Arantes, todos os direitos reservados</p>
    </footer>
-
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   <script>
+       AOS.init(); // Inicializa a biblioteca AOS
+   </script>
 </body>
 </html>
